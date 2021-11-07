@@ -47,7 +47,9 @@ export function identifyArray(array) {
  removeKey(obj, 'password');
  obj now does not contain the `password` field
  */
-export function removeKey(object, key) {}
+export function removeKey(object, key) {
+  delete object[key];
+}
 
 /**
  * Does not mutate the object passed in
@@ -65,7 +67,11 @@ export function removeKey(object, key) {}
  obj will not have the `password` field only because it was assigned the result of the function.
  If only `removeKeyNonDestructive` was called, nothing would have changed.
  */
-export function removeKeyNonDestructive(object, key) {}
+export function removeKeyNonDestructive(object, key) {
+  let tempObj = Object.assign({}, object);
+  delete tempObj[key];
+  return tempObj;
+}
 
 /**
  * Remove and return the listed keys. Without mutating the object passed in.
@@ -88,4 +94,10 @@ export function removeKeyNonDestructive(object, key) {}
 
  * @return {*} The object with its keys removed.
  */
-export function removeKeys(object, keyList) {}
+export function removeKeys(object, keyList) {
+  let tempObj = Object.assign({}, object);
+  for (var i = 0; i < keyList.length; i++) {
+    removeKey(tempObj, keyList[i]);
+  }
+  return tempObj;
+}
