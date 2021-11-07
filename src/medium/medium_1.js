@@ -28,9 +28,9 @@ export function getMedian(array) {
   let mid = Math.floor(array.length / 2);
   let sorted = array.sort((a, b) => a - b);
   if (sorted.length % 2) {
-    return (sorted[middle - 1] + sorted[middle]) / 2;
+    return (sorted[mid - 1] + sorted[mid]) / 2;
   } else {
-    return sorted[middle];
+    return sorted[mid];
   }
 }
 
