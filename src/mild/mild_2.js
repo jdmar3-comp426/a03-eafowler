@@ -23,7 +23,15 @@ export function identifyVariable(variable) {
  ]
 
  */
-export function identifyArray(array) {}
+export function identifyArray(array) {
+  let res = [];
+  let entry = {};
+  for (var i = 0; i < array.length; i++) {
+    let typeV = typeof array[i];
+    entry = { type: typeV, value: array[i] };
+    res[i] = entry;
+  }
+}
 
 /**
  * mutates the object that is passed in.
