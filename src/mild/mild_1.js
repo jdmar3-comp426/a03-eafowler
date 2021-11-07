@@ -10,7 +10,7 @@
  */
 export function sumToString(a, b) {
   var sum = a + b;
-  console.log(a + " + " + b + " = " + sum.toString());
+  console.log(a + " + " + b + " = " + sum);
 }
 
 /**
