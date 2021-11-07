@@ -10,7 +10,7 @@
  */
 export function sumToString(a, b) {
   var sum = a + b;
-  console.log(a.toString() + " + " + b.toString() + " = " + sum.toString());
+  return a + " + " + b + " = " + sum;
 }
 
 /**
@@ -51,7 +51,6 @@ export function maxAndMin(numbers) {
       currMin = numbers[i];
     }
   }
-  console.log(typeof currMin);
   return { min: currMin, max: currMax };
 }
 
