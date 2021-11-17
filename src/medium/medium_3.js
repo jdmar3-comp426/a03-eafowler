@@ -55,5 +55,3 @@ export function searchName(car_data, searchTerm) {}
  * @returns {[]} an array of car objects
  */
 export function searchByYear(car_data, years) {}
-
-console.log(searchHighPower(mpg_data, 500, 500));

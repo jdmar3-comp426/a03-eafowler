@@ -93,5 +93,3 @@ export const moreStats = {
   makerHybrids: undefined,
   avgMpgByYearAndHybrid: undefined,
 };
-
-console.log(allCarStats);
