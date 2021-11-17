@@ -34,7 +34,12 @@ export function searchHighPower(car_data, minHorsepower, minTorque) {
  * sorted by highway_mpg in descending order
  *
  */
-export function searchMpg(car_data, minCity, minHighway) {}
+export function searchMpg(car_data, minCity, minHighway) {
+  let resultArr = car_data.filter(
+    (car) => car.city_mpg >= minCity && car.highway_mpg >= minHighway
+  );
+  return resultArr.sort((a, b) => b.highway_mpg - a.highway_mpg);
+}
 
 /**
  * Find all cars where 'id' contains the search term below.
