@@ -1,12 +1,11 @@
 import mpg_data from "./data/mpg_data.js";
-import {getStatistics} from "./medium_1.js";
+import { getStatistics } from "./medium_1.js";
 
 /*
 This section can be done by using the array prototype functions.
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
 see under the methods section
 */
-
 
 /**
  * This object contains data that has to do with every car in the `mpg_data` object.
@@ -20,11 +19,24 @@ see under the methods section
  * @param {allCarStats.ratioHybrids} ratio of cars that are hybrids
  */
 export const allCarStats = {
-    avgMpg: undefined,
-    allYearStats: undefined,
-    ratioHybrids: undefined,
+  avgMpg: {
+    city: findAvgMpg(
+      mpg_data.filter(function (item) {
+        return item.city_mpg;
+      })
+    ),
+  },
+  allYearStats: undefined,
+  ratioHybrids: undefined,
 };
 
+export function findAvgMpg(array) {
+  let sum = 0;
+  for (let i = 0; i < array.length; i++) {
+    sum += array[i];
+  }
+  return sum / array.length;
+}
 
 /**
  * HINT: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
@@ -84,6 +96,6 @@ export const allCarStats = {
  * }
  */
 export const moreStats = {
-    makerHybrids: undefined,
-    avgMpgByYearAndHybrid: undefined
+  makerHybrids: undefined,
+  avgMpgByYearAndHybrid: undefined,
 };
