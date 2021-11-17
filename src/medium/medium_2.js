@@ -29,12 +29,7 @@ export const allCarStats = {
   },
   allYearStats: getStatistics(mpg_data.map((x) => x.year)),
   ratioHybrids:
-    mpg_data.reduce(function (total, next) {
-      if (next.hybrid == true) {
-        return (total += 1);
-      }
-      return;
-    }) / mpg_data.length,
+    mpg_data.filter((item) => item.hybrid === true).length / mpg_data.length,
 };
 
 /**
