@@ -49,7 +49,10 @@ export function searchMpg(car_data, minCity, minHighway) {
  * @param searchTerm A string to that is used for searching
  * @returns {[]} array of cars
  */
-export function searchName(car_data, searchTerm) {}
+export function searchName(car_data, searchTerm) {
+  let resultArr = car_data.filter((car) => car.id.includes(searchTerm));
+  return resultArr;
+}
 
 /**
  * Find all cars made in the years asked for.
