@@ -27,7 +27,7 @@ export const allCarStats = {
       mpg_data.reduce((total, next) => total + next.highway_mpg, 0) /
       mpg_data.length,
   },
-  allYearStats: undefined,
+  allYearStats: getStatistics(mpg_data),
   ratioHybrids: undefined,
 };
 
