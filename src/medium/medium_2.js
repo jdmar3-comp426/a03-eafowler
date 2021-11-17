@@ -20,23 +20,16 @@ see under the methods section
  */
 export const allCarStats = {
   avgMpg: {
-    city: findAvgMpg(
-      mpg_data.filter(function (item) {
-        return item.city_mpg;
-      })
-    ),
+    city:
+      mpg_data.reduce((total, next) => total + next.city_mpg, 0) /
+      mpg_data.length,
+    highway:
+      mpg_data.reduce((total, next) => total + next.highway_mpg, 0) /
+      mpg_data.length,
   },
   allYearStats: undefined,
   ratioHybrids: undefined,
 };
-
-export function findAvgMpg(array) {
-  let sum = 0;
-  for (let i = 0; i < array.length; i++) {
-    sum += array[i];
-  }
-  return sum / array.length;
-}
 
 /**
  * HINT: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
