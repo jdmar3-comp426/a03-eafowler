@@ -90,7 +90,7 @@ export const tenTimesFifty = () => {
  */
 export const everyEven = (arr, test) => {
   let res = true;
-  for (var i = 0; i < Math.ceil(arr.length / 2); i += 2) {
+  for (var i = 0; i < arr.length; i += 2) {
     res = test(arr[i]);
   }
   return res;
@@ -117,7 +117,7 @@ export const everyEven = (arr, test) => {
  */
 export const someEven = (arr, test) => {
   let res = false;
-  for (var i = 0; i < Math.ceil(arr.length / 2); i += 2) {
+  for (var i = 0; i < arr.length; i += 2) {
     if (test(arr[i]) === true) {
       res = true;
     }
@@ -149,9 +149,9 @@ export const someEven = (arr, test) => {
 export const filter = (arr, test) => {
   let res = { pass: [], fail: [] };
   for (var i = 0; i < arr.length; i++) {
-    if (test(res) === true) {
+    if (test(arr[i]) === true) {
       res.pass.push(arr[i]);
-    } else if (test(res) === false) {
+    } else if (test(arr[i]) === false) {
       res.fail.push(arr[i]);
     }
   }
@@ -182,4 +182,7 @@ export const anEvenIsOdd = (arr) => {
  *   The "hasExactly" function should return true only if exactly n elements
  *   pass the test. You must use the filter function.
  */
-export const hasExactly = (arr, test, n) => {};
+export const hasExactly = (arr, test, n) => {
+  let filterRes = filter(arr, test);
+  return filterRes.pass.length === n;
+};
