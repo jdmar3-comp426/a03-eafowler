@@ -62,4 +62,7 @@ export function searchName(car_data, searchTerm) {
  * @param {number[]} years - array of years to be included in the results e.g. [2010, 2012]
  * @returns {[]} an array of car objects
  */
-export function searchByYear(car_data, years) {}
+export function searchByYear(car_data, years) {
+  let resultArr = car_data.filter((car) => years.includes(car.year));
+  return resultArr;
+}
