@@ -150,7 +150,7 @@ export const filter = (arr, test) => {
   for (var i = 0; i < arr.length; i++) {
     if (test(res) === true) {
       res.pass.push(arr[i]);
-    } else {
+    } else if (test(res) === false) {
       res.fail.push(arr[i]);
     }
   }
