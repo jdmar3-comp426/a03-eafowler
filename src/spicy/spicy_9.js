@@ -88,7 +88,13 @@ export const tenTimesFifty = () => {
  *    everyEven([1, 5, 1, 0, 1], x => x === 1)  <--  returns true
  *    everyEven([1, 1, 0, 1, 1], x => x === 1)  <--  returns false
  */
-export const everyEven = (arr, test) => {};
+export const everyEven = (arr, test) => {
+  let res = true;
+  for (var i = 0; i < Math.ceil(arr.length / 2); i += 2) {
+    res = test(arr[i]);
+  }
+  return res;
+};
 
 /**
  * Write and export a function named "someEven" which takes an array and a test
@@ -109,7 +115,14 @@ export const everyEven = (arr, test) => {};
  *    someEven([1, 1, 1, 1, 0], x => x === 0)  <--  returns true
  *    someEven([0, 0, 0, 0, 0], x => x === 0)  <--  returns true
  */
-export const someEven = (arr, test) => {};
+export const someEven = (arr, test) => {
+  for (var i = 0; i < Math.ceil(arr.length / 2); i += 2) {
+    if (test(arr[i] === true)) {
+      return true;
+    }
+  }
+  return false;
+};
 
 /**
  * Write and export a function named "filter" which takes an array and a test
