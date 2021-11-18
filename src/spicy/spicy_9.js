@@ -162,14 +162,18 @@ export const filter = (arr, test) => {
  *   array and returns true only if all of the even elements in the array are
  *   odd numbers. Use the "everyEven" function in this function.
  */
-export const allEvensAreOdd = (arr) => {};
+export const allEvensAreOdd = (arr) => {
+  return everyEven(arr, (x) => x % 2 === 1);
+};
 
 /**
  * Write and export a function named "anEvenIsOdd" which takes as input an
  *   array and returns true if at least one of the even-indexed elements in the
  *   array is an odd number. Use the "someEven" function in this function.
  */
-export const anEvenIsOdd = (arr) => {};
+export const anEvenIsOdd = (arr) => {
+  return someEven(arr, (x) => x % 2 === 1);
+};
 
 /**
  * Write and export a function named "hasExactly" which takes an array, a test
