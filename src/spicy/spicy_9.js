@@ -116,12 +116,13 @@ export const everyEven = (arr, test) => {
  *    someEven([0, 0, 0, 0, 0], x => x === 0)  <--  returns true
  */
 export const someEven = (arr, test) => {
+  let res = false;
   for (var i = 0; i < Math.ceil(arr.length / 2); i += 2) {
     if (test(arr[i]) === true) {
-      return true;
+      res = true;
     }
   }
-  return false;
+  return res;
 };
 
 /**
