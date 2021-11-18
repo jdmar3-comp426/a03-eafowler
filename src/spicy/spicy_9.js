@@ -45,19 +45,25 @@ export const repeatDemo = () => {
  *   parameter "num2". The returned function should calculate and return the
  *   product of num1 and num2.
  */
-export const multiplyBy = (num1) => {};
+export const multiplyBy = (num1) => {
+  return function (num2) {
+    return num1 * num2;
+  };
+};
 
 /**
  * Use the multiplyBy function to create and export a function named
  *   "tenTimes" that multiplies a number by 10.
  */
-export const tenTimes = undefined;
+export const tenTimes = multiplyBy(10);
 
 /**
  * Write and export a function named "tenTimesFifty" which uses the tenTimes
  *   function to multiply 50 by 10 and returns the result.
  */
-export const tenTimesFifty = () => {};
+export const tenTimesFifty = () => {
+  return tenTimes(50);
+};
 
 /**************************************************************************
  *
