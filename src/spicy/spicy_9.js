@@ -145,7 +145,17 @@ export const someEven = (arr, test) => {
  *    filter([1, 90, 5, 31], x => x % 2 === 1)
  *       -->  { pass: [1, 5, 31], fail: [90] }
  */
-export const filter = (arr, test) => {};
+export const filter = (arr, test) => {
+  let res = { pass: [], fail: [] };
+  for (var i = 0; i < arr.length; i++) {
+    if (test(res) === true) {
+      res.pass.push(arr[i]);
+    } else {
+      res.fail.push(arr[i]);
+    }
+  }
+  return res;
+};
 
 /**
  * Write and export a function named "allEvensAreOdd" which takes as input an
