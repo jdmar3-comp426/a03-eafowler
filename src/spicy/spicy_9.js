@@ -175,8 +175,6 @@ export const anEvenIsOdd = (arr) => {
   return someEven(arr, (x) => x % 2 === 1);
 };
 
-console.log(anEvenIsOdd([3, 3, 3, 3, 3, 3]));
-
 /**
  * Write and export a function named "hasExactly" which takes an array, a test
  *   function for checking individual elements of the array, and a number n.
