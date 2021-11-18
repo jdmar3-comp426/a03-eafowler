@@ -117,7 +117,7 @@ export const everyEven = (arr, test) => {
  */
 export const someEven = (arr, test) => {
   for (var i = 0; i < Math.ceil(arr.length / 2); i += 2) {
-    if (test(arr[i] === true)) {
+    if (test(arr[i]) === true) {
       return true;
     }
   }
@@ -174,6 +174,8 @@ export const allEvensAreOdd = (arr) => {
 export const anEvenIsOdd = (arr) => {
   return someEven(arr, (x) => x % 2 === 1);
 };
+
+console.log(anEvenIsOdd([3, 3, 3, 3, 3, 3]));
 
 /**
  * Write and export a function named "hasExactly" which takes an array, a test
